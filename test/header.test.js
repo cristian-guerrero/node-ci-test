@@ -14,7 +14,7 @@ beforeEach(async () => {
 
 // se ejecuta despues de cada test
 afterEach(async () => {
-  await browser.close()
+  // await browser.close()
 })
 
 
@@ -31,9 +31,10 @@ test('Clicking login starts oauth flow', async () => {
 
 // test.only('Signet in, show logout button', async () => {
 test.only('Signet in, show logout button', async () => {
-  const id = '5b80a6c82f32db187b40a25f'
+  // const id = '5b80a6c82f32db187b40a25f'
 
-  const { session, sig } = sessionFactory(id)
+  const user = await  userFactory()
+  const { session, sig } = sessionFactory(user)
 
   await page.setCookie({ name: 'session', value: session })
   await page.setCookie({ name: 'session.sig', value: sig })
