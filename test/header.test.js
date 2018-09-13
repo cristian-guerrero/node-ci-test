@@ -21,7 +21,7 @@ afterEach(async () => {
 
 
 test('The header has the correct test', async () => {
- // const text = await page.$eval('a.brand-logo', el => el.innerHTML)
+  // const text = await page.$eval('a.brand-logo', el => el.innerHTML)
   const text = await page.getContentsOf('a.brand-logo')
   expect(text).toEqual('Blogster')
 })
@@ -39,5 +39,4 @@ test('Signet in, show logout button', async () => {
   const text = await page.getContentsOf('a[href="/auth/logout"]')
 
   expect(text).toEqual('Logout')
-
 })
